@@ -52,3 +52,43 @@ class Empleado:
         """
 
         return self.apellidos + ', '  + self.nombre
+
+
+    def get_edad(self):
+        """
+        Get age function
+
+        :return: employee's age
+        """
+
+        return self.edad
+
+
+    def get_email(self):
+        """
+        Get email function
+
+        :return: employee's email
+        """
+
+        return self.email
+
+
+    def get_direccion(self):
+        """
+        Get address function
+
+        :return: employee's address
+        """
+
+        return self.direccion
+
+
+    def get_salario_anual(self):
+        """
+        Get salary function
+
+        :return: annual salary
+        """
+
+        return self.salario * 12

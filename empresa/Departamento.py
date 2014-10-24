@@ -37,3 +37,23 @@ class Departamento:
         for emp in self.empleados:
             total = total + emp.get_salario()
         return float(total)
+
+
+    def get_nombre_dpto(self):
+        """
+        Get name function
+
+        :return: department name
+        """
+
+        return self.nombre_depto
+
+
+    def get_salario_total_anual(self):
+        """
+
+        :return: sum of annual salaries
+        """
+
+        a = self.get_salario_total() * 12
+        return a
