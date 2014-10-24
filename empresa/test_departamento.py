@@ -45,3 +45,41 @@ class TestDepartamento(TestCase):
         self.assertIsInstance(dpt.get_salario_total(), float)
         self.assertEqual(dpt.get_salario_total(), 3000.0)
 
+
+    def test_get_salario_total_anual(self):
+
+        # create emp mocks
+        e1 = mock(Empleado)
+        e2 = mock(Empleado)
+        e3 = mock(Empleado)
+
+        # define methods
+        when(e1).get_salario().thenReturn(1000.0)
+        when(e2).get_salario().thenReturn(1000.0)
+        when(e3).get_salario().thenReturn(1000.0)
+
+        # create department
+        dpt = Departamento("HR", 2)
+
+        # empty dpt
+        self.assertIsNotNone(dpt.get_salario_total_anual())
+        self.assertIsInstance(dpt.get_salario_total_anual(), float)
+        self.assertEqual(dpt.get_salario_total_anual(), 0.0)
+
+        # add the first employee
+        dpt.add_empleado(e1)
+        self.assertIsNotNone(dpt.get_salario_total_anual())
+        self.assertIsInstance(dpt.get_salario_total_anual(), float)
+        self.assertEqual(dpt.get_salario_total_anual(), 1000.0 * 12)
+
+        # add second employee
+        dpt.add_empleado(e2)
+        self.assertIsNotNone(dpt.get_salario_total_anual())
+        self.assertIsInstance(dpt.get_salario_total_anual(), float)
+        self.assertEqual(dpt.get_salario_total_anual(), 2000.0 * 12)
+
+        # add third employee
+        dpt.add_empleado(e3)
+        self.assertIsNotNone(dpt.get_salario_total_anual())
+        self.assertIsInstance(dpt.get_salario_total_anual(), float)
+        self.assertEqual(dpt.get_salario_total_anual(), 3000.0 * 12)
