@@ -15,7 +15,6 @@ class Departamento:
         self.id_depto = id_depto
         self.empleados = []
 
-
     def add_empleado(self, empleado):
         """
         Add empleado function
@@ -24,7 +23,6 @@ class Departamento:
         """
 
         self.empleados.append(empleado)
-
 
     def get_salario_total(self):
         """
@@ -38,7 +36,6 @@ class Departamento:
             total = total + emp.get_salario()
         return float(total)
 
-
     def get_nombre_dpto(self):
         """
         Get name function
@@ -47,7 +44,6 @@ class Departamento:
         """
 
         return self.nombre_depto
-
 
     def get_salario_total_anual(self):
         """

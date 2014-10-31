@@ -7,7 +7,7 @@ __author__ = 'ezequiel'
 
 class TestDepartamento(TestCase):
 
-    def test_getSalarioTotal(self):
+    def test_get_salario_total(self):
 
         # create emp mocks
         e1 = mock(Empleado)
