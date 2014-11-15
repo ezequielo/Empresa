@@ -8,6 +8,12 @@ __author__ = 'ezequiel'
 class TestDepartamento(TestCase):
 
     def test_get_salario_total(self):
+        """
+        test_get_salario_total
+
+        Tests get_salario_total() method from Departamento class
+        :return: void
+        """
 
         # create emp mocks
         e1 = mock(Empleado)
@@ -47,6 +53,12 @@ class TestDepartamento(TestCase):
 
 
     def test_get_salario_total_anual(self):
+        """
+        test_get_salario_total_anual
+
+        Tests get_salario_total_anual() method from Departamento class
+        :return: void
+        """
 
         # create emp mocks
         e1 = mock(Empleado)

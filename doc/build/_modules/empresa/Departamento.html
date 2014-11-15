@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>empresa.Departamento &mdash; Empresa v0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'v0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Empresa v0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Empresa v0.2 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for empresa.Departamento</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+<span class="kn">from</span> <span class="nn">Empleado</span> <span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="Departamento"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento">[docs]</a><span class="k">class</span> <span class="nc">Departamento</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Departamento.__init__"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre_depto</span><span class="p">,</span> <span class="n">id_depto</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init function</span>
+
+<span class="sd">        :param nombre_depto: Department name</span>
+<span class="sd">        :param id_depto: Department ID</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre_depto</span> <span class="o">=</span> <span class="n">nombre_depto</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_depto</span> <span class="o">=</span> <span class="n">id_depto</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empleados</span> <span class="o">=</span> <span class="p">[]</span>
+</div>
+<div class="viewcode-block" id="Departamento.add_empleado"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento.add_empleado">[docs]</a>    <span class="k">def</span> <span class="nf">add_empleado</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">empleado</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add empleado function</span>
+
+<span class="sd">        :param empleado:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">empleados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">empleado</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Departamento.get_salario_total"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento.get_salario_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_salario_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get salario total function</span>
+
+<span class="sd">        :return: sum of all employee&#39;s salary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">emp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">empleados</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">emp</span><span class="o">.</span><span class="n">get_salario</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Departamento.get_nombre_dpto"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento.get_nombre_dpto">[docs]</a>    <span class="k">def</span> <span class="nf">get_nombre_dpto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get name function</span>
+
+<span class="sd">        :return: department name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre_depto</span>
+</div>
+<div class="viewcode-block" id="Departamento.get_salario_total_anual"><a class="viewcode-back" href="../../departamento.html#empresa.Departamento.Departamento.get_salario_total_anual">[docs]</a>    <span class="k">def</span> <span class="nf">get_salario_total_anual</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :return: sum of annual salaries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_salario_total</span><span class="p">()</span> <span class="o">*</span> <span class="mi">12</span>
+        <span class="k">return</span> <span class="n">a</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Empresa v0.2 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Ezequielo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

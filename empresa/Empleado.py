@@ -1,6 +1,7 @@
 __author__ = 'ezequiel'
 
 class Empleado:
+
     def __init__(self, nombre, apellidos, dni, direccion, edad, email, salario):
         """
         Init function
