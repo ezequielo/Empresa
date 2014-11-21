@@ -1,6 +1,12 @@
 # Created by .gitignore support plugin (hsz.mobi)
 
+# testing sonar
 .sonar
-
-.coverage
 sonar-project.properties
+
+# testing pycov
+.coverage
+
+# sphinx generated files
+doc/build
+doc/make.bat
