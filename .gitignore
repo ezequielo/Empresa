@@ -10,3 +10,6 @@ sonar-project.properties
 # sphinx generated files
 doc/build
 doc/make.bat
+
+# PyCharm
+.idea
